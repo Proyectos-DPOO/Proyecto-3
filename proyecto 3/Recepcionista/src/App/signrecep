@@ -1,5 +1,4 @@
 package App;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -66,7 +65,7 @@ public class signrecep extends JFrame implements ActionListener {
         String contraseña = textField2.getText();
         String confirmarContraseña = textField3.getText();
 
-        String filePath = "sign.csv";
+        String filePath = "data/sign.csv";
 
         if (verificarDatosExisten(filePath, usuario, contraseña, confirmarContraseña)) {
             System.out.println("Error: Los datos ingresados ya existen. Por favor, ingrese nuevos datos.");
@@ -102,4 +101,3 @@ public class signrecep extends JFrame implements ActionListener {
         return false;
     }
 }
-

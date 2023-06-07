@@ -57,7 +57,7 @@ public class logemple extends JFrame implements ActionListener {
         String usuario = textField1.getText();
         String contraseña = textField2.getText();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("sign.csv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("data/sign.csv"))) {
             String line;
             boolean credencialesCorrectas = false;
 
