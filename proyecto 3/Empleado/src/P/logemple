@@ -1,4 +1,4 @@
-package Administrador;
+package p;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,12 +11,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class loga extends JFrame implements ActionListener {
+public class logemple extends JFrame implements ActionListener {
     private JTextField textField1;
     private JTextField textField2;
     private JButton ingresarButton;
 
-    public loga() {
+    public logemple() {
         setTitle("Iniciar Sesión");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(0, 1));
@@ -43,7 +43,7 @@ public class loga extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new loga();
+        new logemple();
     }
 
     @Override

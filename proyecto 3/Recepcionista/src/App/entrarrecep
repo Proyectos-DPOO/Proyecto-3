@@ -4,7 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.FlowLayout;
 
-public class entrarda {
+public class entrada {
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("Ingreso y creación");
