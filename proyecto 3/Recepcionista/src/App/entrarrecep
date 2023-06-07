@@ -3,22 +3,53 @@ package App;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class entrada {
+public class entradarecep extends JFrame implements ActionListener {
+    private JButton signInButton;
+    private JButton logInButton;
+
+    public entradarecep() {
+        setTitle("Ingreso y creación");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        signInButton = new JButton("Sign in");
+        signInButton.addActionListener(this);
+        add(signInButton);
+
+        logInButton = new JButton("Log in");
+        logInButton.addActionListener(this);
+        add(logInButton);
+
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
     public static void main(String[] args) {
+        new entradarecep();
+    }
 
-        JFrame frame = new JFrame("Ingreso y creación");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout()); 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == signInButton) {
+            abrirVentanaSignRecep();
+        } else if (e.getSource() == logInButton) {
+            abrirVentanaLogRecep();
+        }
+    }
 
-        JButton signInButton = new JButton("Sign in");
-        JButton logInButton = new JButton("Log in");
+    private void abrirVentanaSignRecep() {
+        SignRecep ventanaSignRecep = new SignRecep();
+        ventanaSignRecep.setVisible(true);
+        this.dispose(); // Cierra la ventana actual
+    }
 
-        frame.getContentPane().add(signInButton);
-        frame.getContentPane().add(logInButton);
-
-        frame.pack();
-
-        frame.setVisible(true);
+    private void abrirVentanaLogRecep() {
+        LogRecep ventanaLogRecep = new LogRecep();
+        ventanaLogRecep.setVisible(true);
+        this.dispose(); // Cierra la ventana actual
     }
 }

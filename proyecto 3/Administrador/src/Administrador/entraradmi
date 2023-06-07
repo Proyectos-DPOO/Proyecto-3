@@ -3,22 +3,53 @@ package Administrador;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class entraradmi {
+public class entrarAdmi extends JFrame implements ActionListener {
+    private JButton signInButton;
+    private JButton logInButton;
+
+    public entrarAdmi() {
+        setTitle("Ingreso y creación");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        signInButton = new JButton("Sign in");
+        signInButton.addActionListener(this);
+        add(signInButton);
+
+        logInButton = new JButton("Log in");
+        logInButton.addActionListener(this);
+        add(logInButton);
+
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
     public static void main(String[] args) {
+        new entrarAdmi();
+    }
 
-        JFrame frame = new JFrame("Ingreso y creación");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout()); 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == signInButton) {
+            abrirVentanaSignAdmi();
+        } else if (e.getSource() == logInButton) {
+            abrirVentanaLogAdmi();
+        }
+    }
 
-        JButton signInButton = new JButton("Sign in");
-        JButton logInButton = new JButton("Log in");
+    private void abrirVentanaSignAdmi() {
+        SignAdmi ventanaSignAdmi = new SignAdmi();
+        ventanaSignAdmi.setVisible(true);
+        this.dispose(); // Cierra la ventana actual
+    }
 
-        frame.getContentPane().add(signInButton);
-        frame.getContentPane().add(logInButton);
-
-        frame.pack();
-
-        frame.setVisible(true);
+    private void abrirVentanaLogAdmi() {
+        LogAdmi ventanaLogAdmi = new LogAdmi();
+        ventanaLogAdmi.setVisible(true);
+        this.dispose(); // Cierra la ventana actual
     }
 }

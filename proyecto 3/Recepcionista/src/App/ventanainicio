@@ -43,41 +43,37 @@ public class ventanainicio extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == recepcionistaButton) {
-            abrirVentanaSignup();
+            abrirVentanaEntrarRecep();
         } else if (e.getSource() == adminButton) {
-            abrirVentanaAdministrador();
+            abrirVentanaEntrarAdmi();
         } else if (e.getSource() == empleadoButton) {
-            abrirVentanaEntrar();
+            abrirVentanaEntrarEmple();
         } else if (e.getSource() == usuarioButton) {
-            abrirVentanaUsuario();
+            abrirVentanaSignup();
         }
     }
 
-    private void abrirVentanaAdministrador() {
-        // Lógica para abrir la ventana de administrador
-        VentanaAdministrador ventanaAdmin = new VentanaAdministrador();
-        ventanaAdmin.setVisible(true);
+    private void abrirVentanaEntrarAdmi() {
+        EntrarAdmi ventanaEntrarAdmi = new EntrarAdmi();
+        ventanaEntrarAdmi.setVisible(true);
         this.dispose(); // Cierra la ventana actual
     }
 
+    private void abrirVentanaEntrarRecep() {
+        EntrarRecep ventanaEntrarRecep = new EntrarRecep();
+        ventanaEntrarRecep.setVisible(true);
+        this.dispose(); // Cierra la ventana actual
+    }
+    
+    private void abrirVentanaEntrarEmple() {
+        EntrarEmple ventanaEntrarEmple = new EntrarEmple();
+        ventanaEntrarEmple.setVisible(true);
+        this.dispose(); // Cierra la ventana actual
+    }
+    
     private void abrirVentanaSignup() {
-        // Lógica para abrir la ventana de signup
         Signup ventanaSignup = new Signup();
         ventanaSignup.setVisible(true);
-        this.dispose(); // Cierra la ventana actual
-    }
-    
-    private void abrirVentanaEntrar() {
-        // Lógica para abrir la ventana de entrar
-        Entrar ventanaEntrar = new Entrar();
-        ventanaEntrar.setVisible(true);
-        this.dispose(); // Cierra la ventana actual
-    }
-    
-    private void abrirVentanaUsuario() {
-        // Lógica para abrir la ventana de usuario
-        Usuario ventanaUsuario = new Usuario();
-        ventanaUsuario.setVisible(true);
         this.dispose(); // Cierra la ventana actual
     }
 
